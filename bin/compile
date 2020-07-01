@@ -1,0 +1,11 @@
+#!/bin/sh
+
+BUILD_DIR="$1"
+
+RUNDECK_VERSION=`cat ./bin/version`
+RUNDECK_JAR="${BUILD_DIR}/rundeck.war"
+RUNDECK_URL="https://dl.bintray.com/rundeck/rundeck-maven/rundeck-${RUNDECK_VERSION}.war"
+
+echo -n "-----> Downloading Rundeck... from $RUNDECK_URL to $RUNDECK_JAR"
+curl -s --retry 3 -o "$RUNDECK_JAR" -L "$RUNDECK_URL"
+echo "done"
