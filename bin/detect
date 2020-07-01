@@ -2,11 +2,5 @@
 
 set -e
 
-BUILD_DIR=$1
-
-if [[ -f /app/server/config/rundeck-config.properties ]]; then
-  echo "Rundeck"
-  exit 0
-else
-  exit 1
-fi
+echo "Rundeck"
+exit 0
